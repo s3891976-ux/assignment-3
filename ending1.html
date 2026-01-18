@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ending</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: "Mountains of Christmas", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        #sorrow {
+            position: absolute;
+            top: 54%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90vw;
+            pointer-events: none;
+            z-index: 2;
+            opacity: 1;
+        }
+
+        #holdBtn {
+            font-family: "Mountains of Christmas", serif;
+            font-weight: 400;
+            font-style: normal;
+            position: absolute;
+            top: 80%;
+            left: 51.5%;
+            transform: translate(-50%, -50%);
+            width: 10vw;
+            height: 10vw;
+            border-radius: 50%;
+            border: 2px solid rgb(255, 255, 255);
+            background: rgba(0, 0, 0);
+            color: white;
+            font-size: 50px;
+            cursor: pointer;
+            z-index: 3;
+            transition: transform 0.2s ease;
+        }
+
+        #holdBtn:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        #sorrow,
+        #holdBtn {
+            transition: opacity 0.5s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="sorrow" src="./asset/sorrow.PNG" />
+
+    <button id="holdBtn">HOLD</button>
+
+    <script src="sketch3.js"></script>
+    <script src="ending1.js"></script>
+</body>
+
+</html>

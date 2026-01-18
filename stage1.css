@@ -1,0 +1,243 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Mountains of Christmas", serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: black;
+}
+.heading1 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  opacity: 0;
+  animation: fadeInOut 2.5s forwards;
+  position: relative;
+  z-index: 5;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.heading1 h1 {
+  margin: 0;
+  font-size: 10rem;
+  color: #ffffff;
+}
+
+#dialogue-box {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1000px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  z-index: 4;
+  background: rgba(255, 255, 255);
+  border: 3px solid rgb(0, 0, 0);
+  padding: 16px;
+  color: rgb(0, 0, 0);
+}
+
+#portrait {
+  width: 100px;
+  height: 130px;
+  object-fit: contain;
+  margin-right: 16px;
+  border: 2px solid rgb(0, 0, 0);
+}
+
+#dialogue-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#speaker {
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+
+#text {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+#continue {
+  position: absolute;
+  bottom: 10%;
+  right: 2%;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.yes-button {
+  position: fixed;
+  bottom: 1%;
+  right: 42%;
+  width: 20vw;
+  max-width: 16vw;
+  height: auto;
+  z-index: 1;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.yes-button:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.game1 img {
+  width: 100%;
+}
+
+.wine,
+.paper,
+.cake {
+  position: fixed;
+  top: 50%;
+  left: -200px;
+  transform: translateY(-50%);
+  transition: left 1s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 1;
+  width: 120px;
+  opacity: 0;
+}
+
+.wine.slide-in {
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.paper.slide-in {
+  left: 2%;
+  opacity: 1;
+}
+
+.cake.slide-in {
+  left: 1%;
+  opacity: 1;
+}
+.wine.slide-out {
+  left: -200px;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition:
+    left 3s ease-out,
+    opacity 1s ease-out;
+}
+
+.paper.slide-out {
+  left: -200px;
+  opacity: 0;
+  transform: translateY(-50%);
+  transition:
+    left 3s ease-out,
+    opacity 1s ease-out;
+}
+
+.cake.slide-out {
+  left: -200px;
+  opacity: 0;
+  transform: translateY(-50%);
+  transition:
+    left 3s ease-out,
+    opacity 1s ease-out;
+}
+
+.yes-video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  opacity: 1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.game2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+
+.game2 img.human-money {
+  width: 90vw;
+  height: auto;
+  object-fit: contain;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: left 0.1s ease-out;
+}
+
+.falling-coin {
+  position: absolute;
+  width: 80px;
+  height: auto;
+  pointer-events: none;
+  transition: top 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 1;
+}
+.game2 .coin,
+.game2 .coin2,
+.game2 .coin3,
+.game2 .coin4 {
+  display: none;
+}
+.game2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.money-text {
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  color: #000000;
+  z-index: 3;
+  margin: 0;
+}

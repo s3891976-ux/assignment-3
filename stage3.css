@@ -1,0 +1,280 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Mountains of Christmas", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.heading3 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  opacity: 1;
+  animation: fadeInOut 2.5s forwards;
+  position: relative;
+  z-index: 5;
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.heading3 h1 {
+  margin: 0;
+  font-size: 10rem;
+  color: #ffffff;
+}
+
+.album-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.album-close img {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+#skip2 {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  color: #000000;
+  z-index: 3;
+  margin: 0;
+}
+
+.album-open {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.album-open img {
+  position: absolute;
+  width: 50vw;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.family {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Nằm dưới album-open */
+}
+
+.family img {
+  position: absolute;
+  width: 90vw;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.album-close-img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+#dialogue-box {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1000px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  z-index: 4;
+  background: rgba(255, 255, 255);
+  border: 3px solid rgb(0, 0, 0);
+  padding: 16px;
+  color: rgb(0, 0, 0);
+  display: none;
+}
+
+#portrait {
+  width: 100px;
+  height: 130px;
+  object-fit: contain;
+  margin-right: 16px;
+  border: 2px solid rgb(0, 0, 0);
+}
+
+#dialogue-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#speaker {
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+
+#text {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+#continue {
+  position: absolute;
+  bottom: 10%;
+  right: 2%;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.img1 {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img2 {
+  position: absolute;
+  z-index: 10; /* Tăng z-index lên cao hơn canvas */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.album-open img {
+  position: absolute;
+  width: 90vw;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5; /* img trong album có z-index 5 */
+}
+
+main {
+  display: none !important;
+}
+
+/* Canvas sẽ nằm dưới img */
+canvas {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 0 !important;
+  pointer-events: auto !important;
+}
+
+.draw {
+  display: none;
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(0, 0, 0);
+  font-size: 3rem;
+  z-index: 100;
+  margin: 0;
+  text-align: center;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 5px solid black;
+  padding: 40px 60px;
+  z-index: 200;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.popup h2 {
+  font-size: 3rem;
+  margin: 0 0 30px 0;
+  color: black;
+}
+
+.popup-buttons {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.popup-btn {
+  font-family: "Mountains of Christmas", serif;
+  font-size: 2rem;
+  padding: 15px 40px;
+  border: 3px solid black;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.popup-btn:hover {
+  background: black;
+  color: white;
+  transform: scale(1.1);
+}
+
+.yes-btn:hover {
+  background: #000000;
+  border-color: #000000;
+  color: white;
+}
+
+.no-btn:hover {
+  background: #000000;
+  border-color: #000000;
+  color: white;
+}

@@ -1,0 +1,140 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  opacity: 0;
+  animation: fadeInBody 0.5s forwards;
+  font-family: "Mountains of Christmas", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@keyframes fadeInBody {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.open1 {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  align-items: center;
+}
+
+@keyframes fadeInOpen1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#dialogue-box {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1000px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  z-index: 4;
+  background: rgba(255, 255, 255);
+  border: 3px solid rgb(0, 0, 0);
+  padding: 16px;
+  color: rgb(0, 0, 0);
+}
+
+#portrait {
+  width: 100px;
+  height: 130px;
+  object-fit: contain;
+  margin-right: 16px;
+  border: 2px solid rgb(0, 0, 0);
+}
+
+#dialogue-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#speaker {
+  font-size: 1.5rem;
+  font-weight: 700;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+
+#typeSound {
+  display: none;
+}
+
+#text {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+#continue {
+  position: absolute;
+  bottom: 10%;
+  right: 2%;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.opening {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.opening img {
+  margin: 0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* Thứ tự đè */
+.open1 {
+  z-index: 1;
+  opacity: 1;
+}
+
+.open2 {
+  z-index: 2;
+  opacity: 0;
+  transition: none;
+}
+
+.open3 {
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* Khi show */
+.show {
+  opacity: 1;
+}
